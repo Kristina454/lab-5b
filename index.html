@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>СтильВкуса — Рецепты с фото</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-wrapper">
+      <div class="logo">
+        <a id="logoHomeLink">
+          <img class="logo-img" src="images/лого.png" alt="Лого">
+          <span class="logo-text">СтильВкуса</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a data-page="home" class="active">Главная</a>
+        <a data-page="catalog">Каталог</a>
+        <a data-page="travel">Путешествуй и пробуй</a>
+        <a data-page="about">О нас</a>
+      </div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Поиск рецептов...">
+        <button id="searchButton"><i class="fas fa-search"></i></button>
+      </div>
+      <button class="burger-menu" id="burgerBtn"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-nav" id="mobileMenu">
+      <a data-page="home">🏠 Главная</a>
+      <a data-page="catalog">📚 Каталог</a>
+      <a data-page="travel">✈️ Путешествуй и пробуй</a>
+      <a data-page="about">👥 О нас</a>
+    </div>
+  </div>
+</header>
+
+<div class="content-wrapper">
+  <div class="white-strip">
+    <main>
+      <!-- ГЛАВНАЯ -->
+      <div id="homePage">
+        <div class="hero">
+          <img class="hero-bg" src="images/фон2.jpg" alt="Атмосфера">
+          <div class="hero-content">
+            <h1>Изысканный вкус & вдохновение</h1>
+            <p>Откройте мир гастрономических впечатлений вместе с нами. Свежие рецепты, авторская кухня и теплота каждой детали.</p>
+          </div>
+        </div>
+        <div class="features">
+          <div class="card"><i class="fas fa-store"></i><h3>Каталог</h3><p>Огромный выбор рецептов</p><button class="card-link catalog-nav-trigger">Посмотреть каталог <i class="fas fa-arrow-right"></i></button></div>
+          <div class="card"><i class="fas fa-heart"></i><h3>О нас</h3><p>История и команда</p><button class="card-link about-nav-trigger">Узнать больше <i class="fas fa-arrow-right"></i></button></div>
+          <div class="card"><i class="fas fa-globe-asia"></i><h3>Путешествуй и пробуй</h3><p>Кулинарные традиции мира</p><button class="card-link travel-nav-trigger">Вдохновиться <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+      </div>
+
+      <!-- СТРАНИЦА КАТАЛОГА -->
+      <div id="catalogPage" class="hidden-page">
+        <div class="catalog-section">
+          <div class="catalog-header">
+            <h2><i class="fas fa-utensils"></i> Каталог рецептов</h2>
+            <p>Выберите категорию, чтобы посмотреть рецепты</p>
+          </div>
+          <div class="categories-grid">
+            <div class="category-card" data-category="salads"><div class="category-icon"></div><h3>Салаты</h3><p>Классические и авторские рецепты</p></div>
+            <div class="category-card" data-category="soups"><div class="category-icon"></div><h3>Супы</h3><p>Согревающие первые блюда</p></div>
+            <div class="category-card" data-category="mains"><div class="category-icon"></div><h3>Горячие блюда</h3><p>Мясо, птица, рыба</p></div>
+            <div class="category-card" data-category="desserts"><div class="category-icon"></div><h3>Десерты</h3><p>Сладости и выпечка</p></div>
+            <div class="category-card" data-category="drinks"><div class="category-icon"></div><h3>Напитки</h3><p>Освежающие и согревающие напитки</p></div>
+            <div class="category-card" data-category="bakery"><div class="category-icon"></div><h3>Выпечка</h3><p>Хлеб, пироги, булочки</p></div>
+            <div class="category-card" data-category="breakfast"><div class="category-icon"></div><h3>Завтраки</h3><p>Энергичное начало дня</p></div>
+            <div class="category-card" data-category="sauces"><div class="category-icon"></div><h3>Соусы и маринады</h3><p>Домашние заправки</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- СТРАНИЦЫ СПИСКОВ РЕЦЕПТОВ (все 8 разделов) -->
+      <div id="saladsListPage" class="hidden-page"><div class="recipes-page"><button class="back-to-catalog" id="backToCatalogFromSalads"><i class="fas fa-arrow-left"></i> Назад к каталогу</button><div class="recipes-header"><h2><i class="fas fa-leaf"></i> Салаты</h2><p>Свежие, сытные и праздничные рецепты на любой вкус</p></div><div class="recipes-grid" id="saladsRecipesGrid"></div></div></div>
+      <div id="soupsListPage" class="hidden-page"><div class="recipes-page"><button class="back-to-catalog" id="backToCatalogFromSoups"><i class="fas fa-arrow-left"></i> Назад к каталогу</button><div class="recipes-header"><h2><i class="fas fa-mug-hot"></i> Супы</h2><p>Согревающие, наваристые и ароматные первые блюда</p></div><div class="recipes-grid" id="soupsRecipesGrid"></div></div></div>
+      <div id="mainsListPage" class="hidden-page"><div class="recipes-page"><button class="back-to-catalog" id="backToCatalogFromMains"><i class="fas fa-arrow-left"></i> Назад к каталогу</button><div class="recipes-header"><h2><i class="fas fa-drumstick-bite"></i> Горячие блюда</h2><p>Сытные, ароматные и вкусные рецепты для всей семьи</p></div><div class="recipes-grid" id="mainsRecipesGrid"></div></div></div>
+      <div id="dessertsListPage" class="hidden-page"><div class="recipes-page"><button class="back-to-catalog" id="backToCatalogFromDesserts"><i class="fas fa-arrow-left"></i> Назад к каталогу</button><div class="recipes-header"><h2><i class="fas fa-cake-candles"></i> Десерты</h2><p>Сладкие удовольствия на любой вкус</p></div><div class="recipes-grid" id="dessertsRecipesGrid"></div></div></div>
+      <div id="drinksListPage" class="hidden-page"><div class="recipes-page"><button class="back-to-catalog" id="backToCatalogFromDrinks"><i class="fas fa-arrow-left"></i> Назад к каталогу</button><div class="recipes-header"><h2><i class="fas fa-coffee"></i> Напитки</h2><p>Освежающие, тонизирующие и согревающие напитки на любой вкус</p></div><div class="recipes-grid" id="drinksRecipesGrid"></div></div></div>
+      <div id="bakeryListPage" class="hidden-page"><div class="recipes-page"><button class="back-to-catalog" id="backToCatalogFromBakery"><i class="fas fa-arrow-left"></i> Назад к каталогу</button><div class="recipes-header"><h2><i class="fas fa-bread-slice"></i> Выпечка</h2><p>Ароматная домашняя выпечка на любой вкус</p></div><div class="recipes-grid" id="bakeryRecipesGrid"></div></div></div>
+      <div id="breakfastListPage" class="hidden-page"><div class="recipes-page"><button class="back-to-catalog" id="backToCatalogFromBreakfast"><i class="fas fa-arrow-left"></i> Назад к каталогу</button><div class="recipes-header"><h2><i class="fas fa-sun"></i> Завтраки</h2><p>Энергичное и вкусное начало дня</p></div><div class="recipes-grid" id="breakfastRecipesGrid"></div></div></div>
+      <div id="saucesListPage" class="hidden-page"><div class="recipes-page"><button class="back-to-catalog" id="backToCatalogFromSauces"><i class="fas fa-arrow-left"></i> Назад к каталогу</button><div class="recipes-header"><h2><i class="fas fa-flask"></i> Соусы и маринады</h2><p>Домашние заправки для любых блюд</p></div><div class="recipes-grid" id="saucesRecipesGrid"></div></div></div>
+
+      <!-- СТРАНИЦЫ ДЕТАЛЬНЫХ РЕЦЕПТОВ -->
+      <div id="saladDetailPage" class="hidden-page"><div class="recipe-detail-page"><button class="back-to-list" id="backToSaladsList"><i class="fas fa-arrow-left"></i> Назад к списку салатов</button><div id="saladDetailContent"></div></div></div>
+      <div id="soupDetailPage" class="hidden-page"><div class="recipe-detail-page"><button class="back-to-list" id="backToSoupsList"><i class="fas fa-arrow-left"></i> Назад к списку супов</button><div id="soupDetailContent"></div></div></div>
+      <div id="mainDetailPage" class="hidden-page"><div class="recipe-detail-page"><button class="back-to-list" id="backToMainsList"><i class="fas fa-arrow-left"></i> Назад к списку горячих блюд</button><div id="mainDetailContent"></div></div></div>
+      <div id="dessertDetailPage" class="hidden-page"><div class="recipe-detail-page"><button class="back-to-list" id="backToDessertsList"><i class="fas fa-arrow-left"></i> Назад к списку десертов</button><div id="dessertDetailContent"></div></div></div>
+      <div id="drinkDetailPage" class="hidden-page"><div class="recipe-detail-page"><button class="back-to-list" id="backToDrinksList"><i class="fas fa-arrow-left"></i> Назад к списку напитков</button><div id="drinkDetailContent"></div></div></div>
+      <div id="bakeryDetailPage" class="hidden-page"><div class="recipe-detail-page"><button class="back-to-list" id="backToBakeryList"><i class="fas fa-arrow-left"></i> Назад к списку выпечки</button><div id="bakeryDetailContent"></div></div></div>
+      <div id="breakfastDetailPage" class="hidden-page"><div class="recipe-detail-page"><button class="back-to-list" id="backToBreakfastList"><i class="fas fa-arrow-left"></i> Назад к списку завтраков</button><div id="breakfastDetailContent"></div></div></div>
+      <div id="sauceDetailPage" class="hidden-page"><div class="recipe-detail-page"><button class="back-to-list" id="backToSaucesList"><i class="fas fa-arrow-left"></i> Назад к списку соусов</button><div id="sauceDetailContent"></div></div></div>
+
+      <!-- ПУТЕШЕСТВУЙ И ПРОБУЙ -->
+      <div id="travelPage" class="hidden-page">
+        <div class="countries-page">
+          <div class="countries-header" style="text-align:center; padding:32px 0 0 0">
+            <h2 style="color:#6a1b2a; font-size:2.4rem"><i class="fas fa-map-marked-alt" style="animation: pulse 1.5s ease-in-out infinite;"></i> Путешествуй и пробуй</h2>
+            <p style="max-width:800px; margin:20px auto">Выберите страну, чтобы познакомиться с её кулинарными традициями и национальными блюдами</p>
+          </div>
+          <div class="countries-grid" id="countriesGrid">
+            <div class="country-card" data-country="italy"><div class="category-icon"></div><h3>Италия</h3><p>Паста, пицца, ризотто и настоящее джелато</p></div>
+            <div class="country-card" data-country="france"><div class="category-icon"></div><h3>Франция</h3><p>Круассаны, улитки, рататуй и сырная тарелка</p></div>
+            <div class="country-card" data-country="japan"><div class="category-icon"></div><h3>Япония</h3><p>Суши, рамен, мисо и моти</p></div>
+            <div class="country-card" data-country="mexico"><div class="category-icon"></div><h3>Мексика</h3><p>Такос, буррито, гуакамоле и сальса</p></div>
+            <div class="country-card" data-country="greece"><div class="category-icon"></div><h3>Греция</h3><p>Греческий салат, мусака, сувлаки и оливки</p></div>
+            <div class="country-card" data-country="thailand"><div class="category-icon"></div><h3>Таиланд</h3><p>Том ям, пад тай, кокосовое молоко</p></div>
+            <div class="country-card" data-country="india"><div class="category-icon"></div><h3>Индия</h3><p>Карри, самоса, тандури и чай масала</p></div>
+            <div class="country-card" data-country="spain"><div class="category-icon"></div><h3>Испания</h3><p>Паэлья, тапас, хамон и сангрия</p></div>
+            <div class="country-card" data-country="turkey"><div class="category-icon"></div><h3>Турция</h3><p>Кебаб, баклава, рахат-лукум и турецкий чай</p></div>
+            <div class="country-card" data-country="morocco"><div class="category-icon"></div><h3>Марокко</h3><p>Тажин, кускус, мятный чай</p></div>
+            <div class="country-card" data-country="vietnam"><div class="category-icon"></div><h3>Вьетнам</h3><p>Фо бо, нэмы, кафе с яйцом</p></div>
+            <div class="country-card" data-country="georgia"><div class="category-icon"></div><h3>Грузия</h3><p>Хачапури, хинкали, сациви и чача</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- СТРАНИЦА ДЕТАЛЕЙ СТРАНЫ -->
+      <div id="countryDetailPage" class="hidden-page">
+        <div class="country-detail-page">
+          <button class="back-to-travel" id="backToTravelList"><i class="fas fa-arrow-left"></i> Назад к списку стран</button>
+          <div id="countryDetailContent"></div>
+        </div>
+      </div>
+
+      <!-- О НАС -->
+      <div id="aboutPage" class="hidden-page"><div style="padding:48px 32px;text-align:center"><h2 style="color:#6a1b2a">👥 О компании "СтильВкуса"</h2><p style="max-width:700px;margin:20px auto">Мы — команда энтузиастов, объединённых любовью к кулинарии. Наша миссия — вернуть радость от приготовления пищи и объединять людей за одним столом.</p><div style="display:flex;justify-content:center;margin:20px 0"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A63debbddaffc07fb7c2c05bacb8c023374e85aa733ba87579c8a4b4cf25ea940&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script></div><p><i class="fas fa-map-marker-alt"></i> Кострома, ул. Ивановская, 24А</p></div></div>
+    </main>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-container">
+      <div class="footer-col"><h4>Навигация</h4><ul><li><a data-page="home">Главная</a></li><li><a data-page="catalog">Каталог</a></li><li><a data-page="travel">Путешествуй и пробуй</a></li><li><a data-page="about">О нас</a></li></ul></div>
+      <div class="footer-col"><h4>Контакты</h4><ul><li>StyleVkusa@mail.ru</li><li>+7 (494) 255-55-55</li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 СтильВкуса — Гармония вкуса и стиля.</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
